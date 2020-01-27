@@ -9,8 +9,6 @@
 */
 class Array : public Object {
 public:
-    Object** obj_;
-    size_t length;
 
     /**
      * Array Constructor
