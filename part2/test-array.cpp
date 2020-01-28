@@ -14,6 +14,8 @@ int main() {
     test_size_create_with_objects();
     test_get_1();
     test_get_2();
+    test_get_3();
+    test_get_4();
     test_add();
     test_add_2();
     test_remove();
@@ -90,6 +92,44 @@ void test_get_2() {
     delete o1;
     delete o2;
     delete o3;
+}
+
+void test_get_3() {
+    printf("Test 3 for get\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+    if (!(tester->get(2)->equals(s3))) {
+        exit(-1);
+    }
+
+    printf("Test 3 for get passed \n");
+    delete[] tester;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+}
+
+void test_get_4() {
+    printf("Test 4 for get\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+    if (!(tester->get(0)->equals(s1))) {
+        exit(-1);
+    }
+
+    printf("Test 4 for get passed \n");
+    delete[] tester;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
 }
 
 void test_add() {
