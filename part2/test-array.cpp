@@ -22,6 +22,8 @@ int main() {
     test_add_4();
     test_remove();
     test_remove_2();
+    test_remove_3();
+    test_remove_4();
     test_indexOf();
     test_indexOf_not_in_array();
     test_replace();
@@ -257,6 +259,62 @@ void test_remove_2() {
     delete o1;
     delete o2;
     delete o3;
+}
+
+void test_remove_3() {
+    printf("Test 3 for remove\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+    // confirm element is where we expect.
+    if (!(tester->get(0)->equals(s1))) {
+        exit(-1);
+    }
+    // size of array should not change.
+    assert(tester->size() == 3);
+    // remove element
+    tester->remove(0);
+    //now element should not be at that index.
+    if ((tester->get(0)->equals(s1))) {
+        exit(-1);
+    }
+    // size of array should not change.
+    assert(tester->size() == 3);
+
+    printf("Test 3 for remove passed \n");
+    delete[] tester;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+}
+
+void test_remove_4() {
+    printf("Test 4 for remove\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+    // confirm element is where we expect.
+    if (!(tester->get(1)->equals(s2))) {
+        exit(-1);
+    }
+    // remove element
+    tester->remove(1);
+    //now element should not be at that index.
+    if ((tester->get(1)->equals(s2))) {
+        exit(-1);
+    }
+
+    printf("Test 4 for remove passed \n");
+    delete[] tester;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
 }
 
 void test_indexOf() {
