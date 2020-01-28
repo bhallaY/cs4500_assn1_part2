@@ -29,6 +29,7 @@ int main() {
     test_indexOf_2();
     test_indexOf_not_in_array_2();
     test_replace();
+    test_replace_2();
     test_hash_me_();
     test_equals();
     printf("SUCCESS! All Pass! \n");
@@ -425,6 +426,34 @@ void test_replace() {
     delete o2;
     delete o3;
     delete o4;
+}
+
+void test_replace_2() {
+    printf("Test 2 for replace\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    String* s4 = new String("Woooo");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+
+    if(!(tester->get(0)->equals(s1))) {
+        exit(-1);
+    }
+
+    tester->replace(0, s4);
+
+    if(!(tester->get(0)->equals(s4))) {
+        exit(-1);
+    }
+
+    printf("Test 2 for replace passed \n");
+    delete[] tester;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+    delete s4;
 }
 
 // hash_me_ not tested because it is up 
