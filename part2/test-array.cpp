@@ -35,6 +35,8 @@ int main() {
     test_hash_me_3_();
     test_hash_me_4_();
     test_equals();
+    test_equals_2();
+    test_equals_3();
     printf("SUCCESS! All Pass! \n");
 };
 
@@ -586,4 +588,53 @@ void test_equals() {
     delete o2;
     delete o3;
     delete o4;
+}
+
+void test_equals_2() {
+    printf("Test 2 for equals\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+    Array* tester2 = new Array(objs);
+
+    //  must be equal because equivalent arrays
+    if(!(tester->equals(tester2))) {
+        exit(-1);
+    }
+
+    printf("Test 2 for equals passed \n");
+    delete[] tester;
+    delete[] tester2;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+}
+
+void test_equals_3() {
+    printf("Test 3 for equals\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Object* objs[3]  = {s3, s2, s1};
+    Array* tester = new Array(objs);
+    Array* tester2 = new Array(objs);
+
+    //  must be equal because equivalent arrays
+    // same reasoning as hash. order should not matter 
+    // for equality in our array. 
+    if(!(tester->equals(tester2))) {
+        exit(-1);
+    }
+
+    printf("Test 3 for equals passed \n");
+    delete[] tester;
+    delete[] tester2;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
 }
