@@ -31,6 +31,9 @@ int main() {
     test_replace();
     test_replace_2();
     test_hash_me_();
+    test_hash_me_2_();
+    test_hash_me_3_();
+    test_hash_me_4_();
     test_equals();
     printf("SUCCESS! All Pass! \n");
 };
@@ -485,6 +488,79 @@ void test_hash_me_() {
     delete o2;
     delete o3;
     delete o4;
+}
+
+void test_hash_me_2_() {
+    printf("Test 2 for hash_me_\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+    Array* tester2 = new Array(objs);
+
+    // hash must be equal because equivalent arrays
+    if(tester->hash_me_() != tester2->hash_me_()) {
+        exit(-1);
+    }
+
+    printf("Test 2 for hash_me_ passed \n");
+    delete[] tester;
+    delete[] tester2;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+}
+
+void test_hash_me_3_() {
+    printf("Test 3 for hash_me_\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Object* objs[3]  = {s3, s2, s1};
+    Array* tester = new Array(objs);
+    Array* tester2 = new Array(objs);
+
+    // hash must be equal because equivalent arrays
+    if(tester->hash_me_() != tester2->hash_me_()) {
+        exit(-1);
+    }
+
+    printf("Test 3 for hash_me_ passed \n");
+    delete[] tester;
+    delete[] tester2;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+}
+
+void test_hash_me_4_() {
+    printf("Test 4 for hash_me_\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Object* objs[3]  = {s1, s2, s3};
+    Object* objs[3]  = {s3, s2, s1};
+    Array* tester = new Array(objs);
+    Array* tester2 = new Array(objs);
+
+    // hash must be equal because equivalent arrays
+    // equivalency is described as equal objects in an array
+    // even if the order is different.
+    if(tester->hash_me_() != tester2->hash_me_()) {
+        exit(-1);
+    }
+
+    printf("Test 4 for hash_me_ passed \n");
+    delete[] tester;
+    delete[] tester2;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
 }
 
 void test_equals() {
