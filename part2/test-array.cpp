@@ -26,6 +26,8 @@ int main() {
     test_remove_4();
     test_indexOf();
     test_indexOf_not_in_array();
+    test_indexOf_2();
+    test_indexOf_not_in_array_2();
     test_replace();
     test_hash_me_();
     test_equals();
@@ -355,6 +357,46 @@ void test_indexOf_not_in_array() {
     delete o2;
     delete o3;
     delete o4;
+}
+
+void test_indexOf_2() {
+    printf("Test 3 for indexOf\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    String* s4 = new String("Woooo");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+
+    assert(tester->indexOf(s1) == 0);
+
+    printf("Test 3 for indexOf passed \n");
+    delete[] tester;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+    delete s4;
+}
+
+void test_indexOf_not_in_array_2() {
+    printf("Test 4 for indexOf\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    String* s4 = new String("Woooo");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* tester = new Array(objs);
+
+    assert(tester->indexOf(s4) == -1);
+
+    printf("Test 4 for indexOf passed \n");
+    delete[] tester;
+    delete objs;
+    delete s1;
+    delete s2;
+    delete s3;
+    delete s4;
 }
 
 void test_replace() {
