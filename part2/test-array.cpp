@@ -11,6 +11,7 @@
 int main() {
     printf("Starting Tests for Arrays \n");
     test_size();
+    test_size_create_with_objects();
     test_get_1();
     test_get_2();
     test_add();
@@ -33,6 +34,24 @@ void test_size() {
     }
     printf("Test 1 for add passed \n");
     delete[] arr;
+}
+
+void test_size_create_with_objects() {
+    printf("Test 2 for add\n");
+    String* s1 = new String("hi");
+    String* s2 = new String("hi");
+    String* s3 = new String("hi");
+    Object* objs[3]  = {s1, s2, s3};
+    Array* arr = new Array(objs);
+    if(!(arr->size()==3)) {
+        exit(-1);
+        std::cout << "expected size " << 3 << " actual " << arr->size(); 
+    }
+    delete[] arr;
+    delete s1;
+    delete s2;
+    delete s3;
+    delete objs;
 }
 
 void test_get_1() {
