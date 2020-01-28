@@ -18,6 +18,8 @@ int main() {
     test_get_4();
     test_add();
     test_add_2();
+    test_add_3();
+    test_add_4();
     test_remove();
     test_remove_2();
     test_indexOf();
@@ -165,6 +167,40 @@ void test_add_2() {
     delete o1;
     delete o2;
     delete o3;
+}
+
+void test_add_3() {
+    printf("Test 3 for add\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Array* tester = new Array(3);
+    tester->add(0, s1);
+    if(!(tester->get(0)->equals(s1))) {
+        exit(-1);
+    }
+    printf("Test 3 for add passed \n");
+    delete[] tester;
+    delete s1;
+    delete s2;
+    delete s3;
+}
+
+void test_add_4() {
+    printf("Test 4 for add\n");
+    String* s1 = new String("hello");
+    String* s2 = new String("world");
+    String* s3 = new String("!");
+    Array* tester = new Array(3);
+    tester->add(1, s1);
+    if(!(tester->get(1)->equals(s1))) {
+        exit(-1);
+    }
+    printf("Test 4 for add passed \n");
+    delete[] tester;
+    delete s1;
+    delete s2;
+    delete s3;
 }
 
 void test_remove() {
