@@ -8,37 +8,6 @@
 #include "string.h"
 #include "array.h"
 
-int main() {
-    printf("Starting Tests for Arrays \n");
-    test_size();
-    test_size_create_with_objects();
-    test_get_1();
-    test_get_2();
-    test_get_3();
-    test_get_4();
-    test_add();
-    test_add_2();
-    test_add_3();
-    test_add_4();
-    test_remove();
-    test_remove_2();
-    test_remove_3();
-    test_remove_4();
-    test_indexOf();
-    test_indexOf_not_in_array();
-    test_indexOf_2();
-    test_indexOf_not_in_array_2();
-    test_replace();
-    test_replace_2();
-    test_hash_me_();
-    test_hash_me_2_();
-    test_hash_me_3_();
-    test_hash_me_4_();
-    test_equals();
-    test_equals_2();
-    test_equals_3();
-    printf("SUCCESS! All Pass! \n");
-};
 
 void test_size() {
     printf("Test 1 for add\n");
@@ -65,7 +34,7 @@ void test_size_create_with_objects() {
     delete s1;
     delete s2;
     delete s3;
-    delete objs;
+    delete[] objs;
 }
 
 void test_get_1() {
@@ -81,7 +50,7 @@ void test_get_1() {
 
     printf("Test 1 for get passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -100,7 +69,7 @@ void test_get_2() {
 
     printf("Test 2 for get passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -119,7 +88,7 @@ void test_get_3() {
 
     printf("Test 3 for get passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -138,7 +107,7 @@ void test_get_4() {
 
     printf("Test 4 for get passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -237,7 +206,7 @@ void test_remove() {
 
     printf("Test 1 for remove passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -263,7 +232,7 @@ void test_remove_2() {
 
     printf("Test 2 for remove passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -293,7 +262,7 @@ void test_remove_3() {
 
     printf("Test 3 for remove passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -319,7 +288,7 @@ void test_remove_4() {
 
     printf("Test 4 for remove passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -338,7 +307,7 @@ void test_indexOf() {
 
     printf("Test 1 for indexOf passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -358,7 +327,7 @@ void test_indexOf_not_in_array() {
 
     printf("Test 2 for indexOf passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -378,7 +347,7 @@ void test_indexOf_2() {
 
     printf("Test 3 for indexOf passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -398,7 +367,7 @@ void test_indexOf_not_in_array_2() {
 
     printf("Test 4 for indexOf passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -426,7 +395,7 @@ void test_replace() {
 
     printf("Test 1 for replace passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -454,7 +423,7 @@ void test_replace_2() {
 
     printf("Test 2 for replace passed \n");
     delete[] tester;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -485,7 +454,7 @@ void test_hash_me_() {
     printf("Test 1 for hash_me_ passed \n");
     delete[] tester;
     delete[] tester2;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -509,7 +478,7 @@ void test_hash_me_2_() {
     printf("Test 2 for hash_me_ passed \n");
     delete[] tester;
     delete[] tester2;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -521,9 +490,9 @@ void test_hash_me_3_() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Object* objs[3]  = {s3, s2, s1};
+    Object* objs2[3]  = {s3, s2, s1};
     Array* tester = new Array(objs, 3);
-    Array* tester2 = new Array(objs, 3);
+    Array* tester2 = new Array(objs2, 3);
 
     // hash must be equal because equivalent arrays
     if(tester->hash_me_() != tester2->hash_me_()) {
@@ -533,7 +502,7 @@ void test_hash_me_3_() {
     printf("Test 3 for hash_me_ passed \n");
     delete[] tester;
     delete[] tester2;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -545,9 +514,9 @@ void test_hash_me_4_() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Object* objs[3]  = {s3, s2, s1};
+    Object* objs2[3]  = {s3, s2, s1};
     Array* tester = new Array(objs, 3);
-    Array* tester2 = new Array(objs, 3);
+    Array* tester2 = new Array(objs2, 3);
 
     // hash must be equal because equivalent arrays
     // equivalency is described as equal objects in an array
@@ -559,7 +528,7 @@ void test_hash_me_4_() {
     printf("Test 4 for hash_me_ passed \n");
     delete[] tester;
     delete[] tester2;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -583,7 +552,7 @@ void test_equals() {
     printf("Test 1 for equals passed \n");
     delete[] tester;
     delete[] tester2;
-    delete objs;
+    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -607,7 +576,7 @@ void test_equals_2() {
     printf("Test 2 for equals passed \n");
     delete[] tester;
     delete[] tester2;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -619,9 +588,9 @@ void test_equals_3() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Object* objs[3]  = {s3, s2, s1};
+    Object* objs2[3]  = {s3, s2, s1};
     Array* tester = new Array(objs, 3);
-    Array* tester2 = new Array(objs, 3);
+    Array* tester2 = new Array(objs2, 3);
 
     //  must be equal because equivalent arrays
     // same reasoning as hash. order should not matter 
@@ -633,8 +602,40 @@ void test_equals_3() {
     printf("Test 3 for equals passed \n");
     delete[] tester;
     delete[] tester2;
-    delete objs;
+    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
 }
+
+int main() {
+    printf("Starting Tests for Arrays \n");
+    test_size();
+    test_size_create_with_objects();
+    test_get_1();
+    test_get_2();
+    test_get_3();
+    test_get_4();
+    test_add();
+    test_add_2();
+    test_add_3();
+    test_add_4();
+    test_remove();
+    test_remove_2();
+    test_remove_3();
+    test_remove_4();
+    test_indexOf();
+    test_indexOf_not_in_array();
+    test_indexOf_2();
+    test_indexOf_not_in_array_2();
+    test_replace();
+    test_replace_2();
+    test_hash_me_();
+    test_hash_me_2_();
+    test_hash_me_3_();
+    test_hash_me_4_();
+    test_equals();
+    test_equals_2();
+    test_equals_3();
+    printf("SUCCESS! All Pass! \n");
+};
