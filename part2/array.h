@@ -22,7 +22,7 @@ public:
      * @optional: if extending this class, replace this with one similar
      * that replaces Object with specific data type you want array to hold.
     */
-    Array (Object** elements);
+    Array (Object** elements, size_t size) : Object(){};
 
     /**
      * Array Destructor. Frees up memory taken by this array.

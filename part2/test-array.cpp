@@ -56,7 +56,7 @@ void test_size_create_with_objects() {
     String* s2 = new String("hi");
     String* s3 = new String("hi");
     Object* objs[3]  = {s1, s2, s3};
-    Array* arr = new Array(objs);
+    Array* arr = new Array(objs, 3);
     if(!(arr->size()==3)) {
         exit(-1);
         std::cout << "expected size " << 3 << " actual " << arr->size(); 
@@ -74,7 +74,7 @@ void test_get_1() {
     Object* o2 = new Object();
     Object* o3 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     if (!(tester->get(0)->equals(o1))) {
         exit(-1);
     }
@@ -93,7 +93,7 @@ void test_get_2() {
     Object* o2 = new Object();
     Object* o3 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     if (!(tester->get(2)->equals(o3))) {
         exit(-1);
     }
@@ -112,7 +112,7 @@ void test_get_3() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     if (!(tester->get(2)->equals(s3))) {
         exit(-1);
     }
@@ -131,7 +131,7 @@ void test_get_4() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     if (!(tester->get(0)->equals(s1))) {
         exit(-1);
     }
@@ -219,7 +219,7 @@ void test_remove() {
     Object* o2 = new Object();
     Object* o3 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     // confirm element is where we expect.
     if (!(tester->get(0)->equals(o1))) {
         exit(-1);
@@ -249,7 +249,7 @@ void test_remove_2() {
     Object* o2 = new Object();
     Object* o3 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     // confirm element is where we expect.
     if (!(tester->get(1)->equals(o2))) {
         exit(-1);
@@ -275,7 +275,7 @@ void test_remove_3() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     // confirm element is where we expect.
     if (!(tester->get(0)->equals(s1))) {
         exit(-1);
@@ -305,7 +305,7 @@ void test_remove_4() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
     // confirm element is where we expect.
     if (!(tester->get(1)->equals(s2))) {
         exit(-1);
@@ -332,7 +332,7 @@ void test_indexOf() {
     Object* o3 = new Object();
     Object* o4 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
 
     assert(tester->indexOf(o1) == 0);
 
@@ -352,7 +352,7 @@ void test_indexOf_not_in_array() {
     Object* o3 = new Object();
     Object* o4 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
 
     assert(tester->indexOf(o4) == 4);
 
@@ -372,7 +372,7 @@ void test_indexOf_2() {
     String* s3 = new String("!");
     String* s4 = new String("Woooo");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
 
     assert(tester->indexOf(s1) == 0);
 
@@ -392,7 +392,7 @@ void test_indexOf_not_in_array_2() {
     String* s3 = new String("!");
     String* s4 = new String("Woooo");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
 
     assert(tester->indexOf(s4) == 4);
 
@@ -412,7 +412,7 @@ void test_replace() {
     Object* o3 = new Object();
     Object* o4 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
 
     if(!(tester->get(0)->equals(o1))) {
         exit(-1);
@@ -440,7 +440,7 @@ void test_replace_2() {
     String* s3 = new String("!");
     String* s4 = new String("Woooo");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
+    Array* tester = new Array(objs, 3);
 
     if(!(tester->get(0)->equals(s1))) {
         exit(-1);
@@ -474,8 +474,8 @@ void test_hash_me_() {
     Object* o3 = new Object();
     Object* o4 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
-    Array* tester2 = new Array(objs);
+    Array* tester = new Array(objs, 3);
+    Array* tester2 = new Array(objs, 3);
 
     // hash must be equal because equivalent arrays
     if(tester->hash_me_() != tester2->hash_me_()) {
@@ -498,8 +498,8 @@ void test_hash_me_2_() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
-    Array* tester2 = new Array(objs);
+    Array* tester = new Array(objs, 3);
+    Array* tester2 = new Array(objs, 3);
 
     // hash must be equal because equivalent arrays
     if(tester->hash_me_() != tester2->hash_me_()) {
@@ -522,8 +522,8 @@ void test_hash_me_3_() {
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
     Object* objs[3]  = {s3, s2, s1};
-    Array* tester = new Array(objs);
-    Array* tester2 = new Array(objs);
+    Array* tester = new Array(objs, 3);
+    Array* tester2 = new Array(objs, 3);
 
     // hash must be equal because equivalent arrays
     if(tester->hash_me_() != tester2->hash_me_()) {
@@ -546,8 +546,8 @@ void test_hash_me_4_() {
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
     Object* objs[3]  = {s3, s2, s1};
-    Array* tester = new Array(objs);
-    Array* tester2 = new Array(objs);
+    Array* tester = new Array(objs, 3);
+    Array* tester2 = new Array(objs, 3);
 
     // hash must be equal because equivalent arrays
     // equivalency is described as equal objects in an array
@@ -572,8 +572,8 @@ void test_equals() {
     Object* o3 = new Object();
     Object* o4 = new Object();
     Object* objs[3]  = {o1, o2, o3};
-    Array* tester = new Array(objs);
-    Array* tester2 = new Array(objs);
+    Array* tester = new Array(objs, 3);
+    Array* tester2 = new Array(objs, 3);
 
     //  must be equal because equivalent arrays
     if(!(tester->equals(tester2))) {
@@ -596,8 +596,8 @@ void test_equals_2() {
     String* s2 = new String("world");
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
-    Array* tester = new Array(objs);
-    Array* tester2 = new Array(objs);
+    Array* tester = new Array(objs, 3);
+    Array* tester2 = new Array(objs, 3);
 
     //  must be equal because equivalent arrays
     if(!(tester->equals(tester2))) {
@@ -620,8 +620,8 @@ void test_equals_3() {
     String* s3 = new String("!");
     Object* objs[3]  = {s1, s2, s3};
     Object* objs[3]  = {s3, s2, s1};
-    Array* tester = new Array(objs);
-    Array* tester2 = new Array(objs);
+    Array* tester = new Array(objs, 3);
+    Array* tester2 = new Array(objs, 3);
 
     //  must be equal because equivalent arrays
     // same reasoning as hash. order should not matter 
