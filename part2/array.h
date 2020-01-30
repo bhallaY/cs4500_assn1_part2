@@ -15,9 +15,6 @@ public:
      */
     Array (size_t size) {};
 
-    /** Copy Constructor for an array. Does NOT take ownership of other array's elements*/
-    Array (Array* to_copy);
-
     /**Constructor to simultaneously create and add specified elements in Array.
      * @optional: if extending this class, replace this with one similar
      * that replaces Object with specific data type you want array to hold.
