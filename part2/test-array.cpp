@@ -354,7 +354,7 @@ void test_indexOf_not_in_array() {
     Object* objs[3]  = {o1, o2, o3};
     Array* tester = new Array(objs);
 
-    assert(tester->indexOf(o4) == -1);
+    assert(tester->indexOf(o4) == 4);
 
     printf("Test 2 for indexOf passed \n");
     delete[] tester;
@@ -394,7 +394,7 @@ void test_indexOf_not_in_array_2() {
     Object* objs[3]  = {s1, s2, s3};
     Array* tester = new Array(objs);
 
-    assert(tester->indexOf(s4) == -1);
+    assert(tester->indexOf(s4) == 4);
 
     printf("Test 4 for indexOf passed \n");
     delete[] tester;
