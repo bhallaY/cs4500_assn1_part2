@@ -59,7 +59,7 @@ public:
     /**
      * Attempts to search for given the element in this array.
      * @param obj The element to search the array for.
-     *  @return The index of the given element OR -1 if not found.
+     *  @return The index of the given element OR size of array + 1.
      */
     virtual size_t indexOf(Object* obj){};
 
