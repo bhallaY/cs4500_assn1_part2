@@ -193,7 +193,7 @@ void test_remove() {
     // remove element
     tester->remove(0);
     //now element should not be at that index.
-    if (tester->get(0) == nullptr) {
+    if (tester->get(0) != nullptr) {
         exit(-1);
     }
     // size of array should not change.
@@ -220,7 +220,7 @@ void test_remove_2() {
     // remove element
     tester->remove(1);
     //now element should not be at that index.
-    if (tester->get(1) == nullptr) {
+    if (tester->get(1) != nullptr) {
         exit(-1);
     }
 
@@ -247,7 +247,7 @@ void test_remove_3() {
     // remove element
     tester->remove(0);
     //now element should not be at that index.
-    if (tester->get(0) == nullptr) {
+    if (tester->get(0) != nullptr) {
         exit(-1);
     }
     // size of array should not change.
@@ -274,7 +274,7 @@ void test_remove_4() {
     // remove element
     tester->remove(1);
     //now element should not be at that index.
-    if (tester->get(1) == nullptr) {
+    if (tester->get(1) != nullptr) {
         exit(-1);
     }
 
