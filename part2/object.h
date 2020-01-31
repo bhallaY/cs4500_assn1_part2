@@ -7,7 +7,6 @@
  */
 class Object {
 public:
-    size_t hash_;  // cache the hash value
 
     /** Default constructor ensure that hash is initialized */
     Object() {};

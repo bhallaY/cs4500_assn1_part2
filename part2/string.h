@@ -7,8 +7,6 @@
  */
 class String : public Object {
 public:
-    char* val_; // char* that is being stored.
-    size_t size_; // number of characters (excluding \0)
 
     /** Constructors **/
 
