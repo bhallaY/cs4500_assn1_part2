@@ -592,10 +592,7 @@ void test_equals_3() {
     Array* tester = new Array(objs, 3);
     Array* tester2 = new Array(objs2, 3);
 
-    //  must be equal because equivalent arrays
-    // same reasoning as hash. order should not matter 
-    // for equality in our array. 
-    if(!(tester->equals(tester2))) {
+    if((tester->equals(tester2))) {
         exit(-1);
     }
 
