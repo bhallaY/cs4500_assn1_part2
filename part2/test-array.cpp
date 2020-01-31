@@ -34,7 +34,6 @@ void test_size_create_with_objects() {
     delete s1;
     delete s2;
     delete s3;
-    delete[] objs;
 }
 
 void test_get_1() {
@@ -50,7 +49,6 @@ void test_get_1() {
 
     printf("Test 1 for get passed \n");
     delete tester;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -69,7 +67,6 @@ void test_get_2() {
 
     printf("Test 2 for get passed \n");
     delete tester;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -88,7 +85,6 @@ void test_get_3() {
 
     printf("Test 3 for get passed \n");
     delete tester;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -107,7 +103,6 @@ void test_get_4() {
 
     printf("Test 4 for get passed \n");
     delete tester;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -206,7 +201,6 @@ void test_remove() {
 
     printf("Test 1 for remove passed \n");
     delete tester;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -232,7 +226,6 @@ void test_remove_2() {
 
     printf("Test 2 for remove passed \n");
     delete tester;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -262,7 +255,6 @@ void test_remove_3() {
 
     printf("Test 3 for remove passed \n");
     delete tester;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -288,7 +280,6 @@ void test_remove_4() {
 
     printf("Test 4 for remove passed \n");
     delete tester;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -307,7 +298,6 @@ void test_indexOf() {
 
     printf("Test 1 for indexOf passed \n");
     delete tester;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -327,7 +317,6 @@ void test_indexOf_not_in_array() {
 
     printf("Test 2 for indexOf passed \n");
     delete tester;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -347,7 +336,6 @@ void test_indexOf_2() {
 
     printf("Test 3 for indexOf passed \n");
     delete tester;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -367,7 +355,6 @@ void test_indexOf_not_in_array_2() {
 
     printf("Test 4 for indexOf passed \n");
     delete tester;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -395,7 +382,6 @@ void test_replace() {
 
     printf("Test 1 for replace passed \n");
     delete tester;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -423,7 +409,6 @@ void test_replace_2() {
 
     printf("Test 2 for replace passed \n");
     delete tester;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -454,7 +439,6 @@ void test_hash_me_() {
     printf("Test 1 for hash_me_ passed \n");
     delete tester;
     delete tester2;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -478,7 +462,6 @@ void test_hash_me_2_() {
     printf("Test 2 for hash_me_ passed \n");
     delete tester;
     delete tester2;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -502,8 +485,6 @@ void test_hash_me_3_() {
     printf("Test 3 for hash_me_ passed \n");
     delete tester;
     delete tester2;
-    delete[] objs;
-    delete [] objs2;
     delete s1;
     delete s2;
     delete s3;
@@ -529,8 +510,6 @@ void test_hash_me_4_() {
     printf("Test 4 for hash_me_ passed \n");
     delete tester;
     delete tester2;
-    delete[] objs;
-    delete[] objs2;
     delete s1;
     delete s2;
     delete s3;
@@ -554,7 +533,6 @@ void test_equals() {
     printf("Test 1 for equals passed \n");
     delete tester;
     delete tester2;
-    delete[] objs;
     delete o1;
     delete o2;
     delete o3;
@@ -578,7 +556,6 @@ void test_equals_2() {
     printf("Test 2 for equals passed \n");
     delete tester;
     delete tester2;
-    delete[] objs;
     delete s1;
     delete s2;
     delete s3;
@@ -601,8 +578,6 @@ void test_equals_3() {
     printf("Test 3 for equals passed \n");
     delete tester;
     delete tester2;
-    delete[] objs;
-    delete[] objs2;
     delete s1;
     delete s2;
     delete s3;
