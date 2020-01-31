@@ -79,7 +79,7 @@ public:
      * Calculate the hash code for this array.
      * @return The hash code for this array.
      */
-    size_t hash_me_() {};
+    virtual size_t hash_me_() {};
 
     /**
      * Check if this array is equal to the Object given. Arrays should be equal if all their elements are equal.
@@ -87,13 +87,13 @@ public:
      * @param other The Object to compare to this array.
      * @return True if other is equal to this; false otherwise.
      */
-    bool equals(Object* other) {};
+    virtual bool equals(Object* other) {};
 
     /** Returns this Array's contents as a string, with a ',' and a space 
      * after between each element printed*/
-    char* to_string() {};
+    virtual char* to_string() {};
 
     /* Print the contents of this Array to stdout*/
-    void print() {};
+    virtual void print() {};
 
 };
